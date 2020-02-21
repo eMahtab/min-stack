@@ -20,13 +20,13 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 ```
-## Approach
+## Approach :
 The question asks us to implement 4 functions and all of them should have constant runtime, which means no matter how large the input is, those 4 functions should always run in constant time.
 
 Now we already know that, a Stack gives us `push(x)` , `pop()` and `peek()` functions, all of these 3 functions run in constant time.
 So If we use Stack, the only additional thing we would have to implement is the `getMin()` function.
 
-We will use one additional stack called the `min_stack` to keep track of the minimum element in the stack at any point of time, this will allow us to get the minimum element from the stack in constant time.
+We will use one additional stack called the `minStack` to keep track of the minimum element in the stack at any point of time, this will allow us to get the minimum element from the stack in constant time.
 
 # Implementation :
 
@@ -59,6 +59,11 @@ class MinStack {
 }
 
 ```
+
+### Key Points :
+1. Don't forget to update the minStack on both push and pop operations on the main stack
+2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
+
 
 # References :
 1. https://www.youtube.com/watch?v=nGwn8_-6e7w
