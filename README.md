@@ -63,7 +63,7 @@ class MinStack {
 ### Key Points :
 1. Don't forget to update the minStack on both push and pop operations on the main stack
 2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
-3. In the `pop()` we first update the `minStack()` before actually popping from the main stack
+3. In the `pop()` we first update the `minStack` before actually popping from the main stack
 
 # References :
 1. https://www.youtube.com/watch?v=nGwn8_-6e7w
