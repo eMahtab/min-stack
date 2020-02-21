@@ -5,33 +5,32 @@
 
 ```java
 class MinStack {
-    Stack<Integer> s1, s2;
-    /** initialize your data structure here. */
-    public MinStack() {
-        s1 = new Stack<Integer>();
-        s2 = new Stack<Integer>();
+   private Stack<Integer> stack = new Stack<>();
+   private Stack<Integer> minStack = new Stack<>();
+  
+   public void push(int x) {
+        stack.push(x);
+        if (minStack.isEmpty() || x <= minStack.peek()) {
+            minStack.push(x);
+        }
     }
-    
-    public void push(int x) {
-        s1.push(x);
-        if(s2.isEmpty() || x <= s2.peek())
-            s2.push(x);
-    }
-    
-    public void pop() {
-        int x = s1.pop();
-        if(x == s2.peek())
-            s2.pop();
-    }
-    
-    public int top() {
-        return s1.peek();
-    }
-    
-    public int getMin() {
-        return s2.peek();
-    }
+     
+   public void pop() {
+        if (stack.peek().equals(minStack.peek())) {
+            minStack.pop();
+        }
+       stack.pop();
+   }
+   
+   public int top() {
+        return stack.peek();
+   }
+ 
+   public int getMin() {
+        return minStack.peek();
+   }
 }
+
 ```
 
 # References :
