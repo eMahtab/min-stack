@@ -1,6 +1,33 @@
 # Min Satck
 ## https://leetcode.com/problems/min-stack
 
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+push(x) -- Push element x onto stack.
+pop() -- Removes the element on top of the stack.
+top() -- Get the top element.
+getMin() -- Retrieve the minimum element in the stack.
+ 
+```
+Example:
+
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> Returns -3.
+minStack.pop();
+minStack.top();      --> Returns 0.
+minStack.getMin();   --> Returns -2.
+```
+## Approach
+The question asks us to implement 4 functions and all of them should have constant runtime, which means no matter how large the input is, those 4 functions will always run in constant time.
+
+Now we already know that, a Stack gives us `push(x)` , `pop()` and `peek()` functions, all of these 3 functions run in constant time.
+So If we use Stack, the only additional thing we would to implement is the `getMin()` function.
+
+We will use one additional stack called the `min_stack` to keep track of the minimum element at any point of time, which will allow us to get the minimum element from the stack in constant time.
+
 # Implementation :
 
 ```java
