@@ -65,7 +65,7 @@ class MinStack {
 2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
 3. In the `pop()` we first update the `minStack` before actually popping from the main stack
 
-As a side note, in Java calling `push()`, `pop()` and `peek()` returns the element, but in this question for `push()` and `pop()` the return type is void.
+As a side note, in Java calling `push()`, `pop()` and `peek()` returns the element, but in this question for `push()` and `pop()` the return type is void. And also calling  `pop()` and `peek()` on an empty stack results in `EmptyStackException`
 
 # References :
 1. https://www.youtube.com/watch?v=nGwn8_-6e7w
