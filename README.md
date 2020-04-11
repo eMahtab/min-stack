@@ -28,7 +28,41 @@ So If we use Stack, the only additional thing we would have to implement is the 
 
 We will use one additional stack called the `minStack` to keep track of the minimum element in the stack at any point of time, this will allow us to get the minimum element from the stack in constant time.
 
-# Implementation :
+# Implementation 1 : getMin() => O(n) (Note, getMin() doesn't run in constant time) 😉
+
+```java
+class MinStack {
+    Stack<Integer> stack = new Stack<>();
+    
+    public void push(int x) {
+        stack.push(x);
+    }
+    
+    public void pop() {
+        stack.pop();
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int getMin() {
+        Stack<Integer> s = new Stack<>();
+        int min = Integer.MAX_VALUE;
+        while(!stack.isEmpty()) {
+            int x = stack.pop();
+            min = Math.min(min, x);
+            s.push(x);
+        }
+        while(!s.isEmpty()) {
+            stack.push(s.pop());
+        }
+        return min;
+    }
+}
+```
+
+# Implementation 2 : getMin() => O(1)
 
 ```java
 class MinStack {
@@ -63,7 +97,6 @@ class MinStack {
 ### Key Points :
 1. Don't forget to update the minStack on both push and pop operations on the main stack
 2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
-3. In the `pop()` we first update the `minStack` before actually popping from the main stack
 
 As a side note, in Java calling `push()`, `pop()` and `peek()` returns the element, but in this question for `push()` and `pop()` the return type is void. And also calling  `pop()` and `peek()` on an empty stack results in `EmptyStackException`
 
