@@ -94,6 +94,19 @@ class MinStack {
 
 ```
 
+# Gotcha : Use equals not ==
+```java
+
+class Main {
+  public static void main(String[] args) {
+    Integer a = new Integer(19);
+    Integer b = new Integer(19);
+    System.out.println(a == b);  // false
+    System.out.println(a.equals(b));  // true
+  }  
+}
+```
+
 ### Key Points :
 1. Don't forget to update the minStack on both push and pop operations on the main stack
 2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
