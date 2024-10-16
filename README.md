@@ -28,7 +28,7 @@ So If we use Stack, the only additional thing we would have to implement is the 
 
 We will use one additional stack called the `minStack` to keep track of the minimum element in the stack at any point of time, this will allow us to get the minimum element from the stack in constant time.
 
-# Implementation 1 : getMin() => O(n) (Note, getMin() doesn't run in constant time) 😉
+# Implementation 1 : getMin() = O(n) (Note, getMin() doesn't run in constant time) 😉
 
 ```java
 class MinStack {
@@ -62,7 +62,7 @@ class MinStack {
 }
 ```
 
-# Implementation 2 : getMin() => O(1)
+# Implementation 2 : getMin() = O(1)
 
 ```java
 class MinStack {
