@@ -94,7 +94,7 @@ class MinStack {
 
 ```
 
-# Gotcha : Use equals not ==
+# Gotcha : Use equals when working with Integer object (don't use == operator)
 ```java
 
 class Main {
@@ -109,7 +109,7 @@ class Main {
 
 ### Key Points :
 1. Don't forget to update the minStack on both push and pop operations on the main stack
-2. Pitfall : We push an element to minStack, if the element is less than **or equal to** `min_stack.peek()` 
+2. Note : We push an element to minStack, only if the element is less than **or equal to** `min_stack.peek()` 
 
 As a side note, in Java calling `push()`, `pop()` and `peek()` returns the element, but in this question for `push()` and `pop()` the return type is void. And also calling  `pop()` and `peek()` on an empty stack results in `EmptyStackException`
 
